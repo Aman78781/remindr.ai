@@ -1,0 +1,32 @@
+NOTE: This package also includes the manual Study Plans feature and reminder.ai branding. For current installation steps and the logo asset requirement, follow START-HERE-MANUAL-STUDY-PLANS.txt.
+
+REMINDER.AI — TEACHER GUIDANCE FOR AI REVISION
+
+This package adds an optional teacher-written study guide to each exam. Students can click “Study with AI” on an exam, and the AI will use that exam’s title, subject, class, revision notes, and teacher guidance. Guidance is limited to 2,000 characters per exam.
+
+IMPORTANT LIMITATION
+The AI does not read the contents of PDF, Word, PowerPoint, or image attachments in this update. If you want the AI to use information from an uploaded file, copy the key topics/formulas into the new “Teacher guidance for the AI” box. If the box is blank, the AI can give a general explanation from the exam details and its subject knowledge, but it will say this is not teacher-confirmed and may ask for the exact topic. AI answers can be wrong; students should check important details with a teacher or textbook.
+
+INSTALL — BACK UP FIRST
+1. Back up your current Apps Script code and the connected spreadsheet before changing anything.
+2. Extract this ZIP file. Keep the included APPS-SCRIPT-CODE.gs and index.html together.
+3. Open the existing ExamReady Apps Script project (the same project connected to your current portal).
+4. Open APPS-SCRIPT-CODE.gs from this extracted folder. Select all and copy it.
+5. In Apps Script, open the existing Code.gs file. Select all, paste the copied code, and click Save (or press Ctrl+S / Cmd+S).
+6. In the function dropdown beside Run, choose setup, then click Run. Approve Google permissions if asked. Setup adds the aiGuidance column to the existing Exams sheet; it does not delete existing exam rows or other data.
+7. Open Deploy > Manage deployments. Edit the current web app deployment, choose New version, then click Deploy. Keep the existing web app URL and its current execution/access settings. Do not create a second unrelated deployment.
+8. Update the website file too: if you open the app from your computer, use the new index.html in this extracted folder. If your school hosts the portal online, replace the currently hosted index.html with this package’s index.html using the same hosting method as before. Deploying only the Apps Script code will not show the new teacher form box.
+9. Close old ExamReady tabs, open the updated website, and log in again.
+
+TEST THE FEATURE
+1. Log in as a teacher and create or edit an exam.
+2. At the bottom of the exam form, fill in “Teacher guidance for the AI” with topics, formulas (including what the symbols mean), methods/tools, how to apply each method, and common mistakes. Only write material intended for students.
+3. Publish the exam. Log in as a student in the matching class.
+4. Find that exam and click Study with AI. The chat will be filled with a revision prompt for that particular exam; review it and click Send.
+5. Check that the answer explains the teacher-provided priorities in simple steps. For an exam with no guidance, check that the AI gives a general explanation and does not claim the teacher said it.
+
+KEEP THESE SETTINGS
+- Keep the existing GEMINI_API_KEY, GEMINI_MODEL, administrator, Drive, email, and other Script Properties unchanged.
+- This update does not configure or enable WhatsApp delivery and does not add LMS syncing.
+- Keep the existing daily reminder trigger. This update does not change reminder scheduling.
+- No live deployment was changed or tested while preparing this package. Test with a teacher and student account you control after deployment.

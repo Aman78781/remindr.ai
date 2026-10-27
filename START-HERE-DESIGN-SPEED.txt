@@ -1,0 +1,27 @@
+DESIGN, THEMES AND RESPONSIVENESS UPDATE
+
+Back up your working website folder and Apps Script code.
+
+1. Extract this ZIP into a new folder.
+2. Replace your existing Code.gs with APPS-SCRIPT-CODE.gs. Save.
+3. Run setup once, then Deploy > Manage deployments > pencil > New version > Deploy. Keep the same /exec URL.
+4. Keep ADMIN_EMAIL, Gemini and Twilio Script Properties unchanged. Daily reminder trigger stays unchanged.
+5. Close older website tabs, open this folder's index.html, and log in.
+
+Use the sun/moon theme button in the header. It defaults to your device theme until you choose light/dark, and remembers that choice. New downloaded folders intentionally do not inherit login credentials.
+
+WHAT CHANGED
+- Theme across homepage, forms, student/teacher/admin dashboards, files, reminders and study chat.
+- Improved spacing, typography, mobile layout, contrast and touch targets.
+- Request-local data/header reuse: no shared cache of permissions. Account access is still checked each authenticated request; disable/revocation still works.
+- Local account search and combined admin fetch retained. Safe admin read retries on transport failures only.
+- Clear refresh status, stale-data labels, chat thinking state, form duplicate-click guards.
+- Exam deletion is shown as successful only after server confirmation. A 404 alone is NOT proof of deletion. If confirmation fails, refresh before retrying.
+- Save/delete now update cached views and reminder plans. Save uses confirmed reminder counts from backend instead of guessing.
+- Delayed exam responses are scoped to their original login. Recovery uses the original request token rather than any new account token.
+
+LIMITS
+This reduces repeated work and improves responsiveness, but cannot guarantee instantaneous network/Apps Script/Gemini responses. Gemini is still non-streaming; a thinking indicator is not token streaming. No automatic WhatsApp delivery is enabled. Existing beta authentication limits documented in START-HERE-ADMIN.txt still apply.
+
+QUICK TEST
+Toggle dark/light, refresh and verify preference persists. Test teacher save/edit/delete, student refresh/reminders/chat, and admin approvals/disable/re-enable. Retest with a disabled account to verify protected requests fail. Do not use real students for first tests.

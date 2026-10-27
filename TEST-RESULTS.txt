@@ -1,0 +1,40 @@
+LOCAL SIMULATED TESTS
+
+Account regressions: existing email signup verification and password reset tests passed.
+Student preferences: selected signup days survive verification; exact authenticated student identity; only selected due stages generated/shown; all-off allowed; re-enable without duplicate records; legacy teacher pause ignored; strict boolean validation; unauthenticated writes denied.
+Desktop/mobile UI: student-only signup choices; Settings student/teacher visibility; all-off/selected saves; light/dark and browser-persistent sound; teacher exam form without reminder controls; no page errors or horizontal overflow.
+No real workspace deployment was changed by these tests. Test the new package after updating your deployment.
+
+AI TEACHER-GUIDANCE UPDATE — LOCAL PACKAGE CHECKS
+- JavaScript syntax checks passed for app.js and embedded scripts in index.html.
+- Apps Script code passed a local JavaScript syntax check.
+- Local browser smoke test found the teacher guidance textarea (2,000-character limit) with no page errors.
+- Local UI check confirmed student exam cards create an exam-specific “Study with AI” prompt.
+- Static checks confirmed the new field is added through setup, persisted on create/update, passed to the Gemini prompt, and constrained to the student's visible exams.
+- No live Apps Script deployment, spreadsheet, Gemini request, or WhatsApp delivery was changed or tested.
+
+MANUAL STUDY PLANS UPDATE — LOCAL CHECKS
+- JavaScript syntax checks passed for app.js and embedded index.html scripts; index.html and standalone.html are identical.
+- Mocked backend checks passed for creating plans, recording task completion timestamps, preserving timestamps on later saves, limiting plan ownership to the authenticated student, and deleting plans.
+- Local browser smoke test passed for creating a two-task plan and checking off a task; completion time was displayed and no page errors were reported.
+- No live Apps Script deployment, spreadsheet, student account, Gemini request, or WhatsApp delivery was changed or tested.
+
+REMINDER.AI BRAND UPDATE — VISUAL QA
+- Desktop homepage (1440px), mobile homepage (390px), and dark-mode desktop previews rendered; the supplied logo and requested slogan are visible.
+- Screenshots reported no horizontal overflow, clipped elements, console errors, exceptions, or failed image resources.
+- The full original logo and the header wordmark crop are retained in assets/.
+- No live domain, DNS, hosting, or Apps Script deployment was changed.
+
+REMINDER.AI BRAND UPDATE — FINAL VISUAL QA
+- Study Plans dashboard and Add a study plan dialog rendered at desktop size; spacing, contrast, and task completion time display were visually checked.
+- Automated browser checks reported no horizontal viewport overflow, console errors, exceptions, or failed image resources on the captured views.
+- JavaScript syntax checks passed for app.js, Apps Script code, and inline page scripts; index.html and standalone.html match.
+
+TWILIO WHATSAPP SENDER — IMPLEMENTATION QA
+- Added a Twilio Content API sender for ready reminders, with duplicate prevention through reminder status and a scheduled daily dispatch after reminder preparation.
+- Added explicit WhatsApp opt-in at student signup and in student Settings. Existing students remain opted out unless they enable it.
+- Sender validates international WhatsApp address format, confirms the exam stage is due, checks class match and student reminder preferences, and stores sent/failed status.
+- Google Apps Script and browser JavaScript syntax checks passed; index.html and standalone.html match.
+- Mock Twilio request test passed with the documented two-variable sample template. No real Twilio message was sent; owner must configure Script Properties and test in their Sandbox.
+- Signup opt-in checkbox was visually checked; no horizontal overflow or browser errors in the rendered preview.
+- Added optional Sandbox free-form demo mode (`TWILIO_SANDBOX_FREEFORM=true`) for the custom reminder copy during the 24-hour user-initiated window. Mock request checks passed for both free-form and approved-template modes; no real messages were sent.

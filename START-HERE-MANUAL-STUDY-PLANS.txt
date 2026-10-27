@@ -1,0 +1,34 @@
+REMINDER.AI — MANUAL STUDY PLANS
+
+This update adds a student-only Study Plans section. It is not AI-based. Each student can create a plan such as “Learn Maths today,” add specific tasks, add more tasks later, tick tasks complete, and see the completion date/time. Plan data is stored privately per student in the existing connected spreadsheet.
+
+INSTALL — BACK UP FIRST
+1. Back up your current Apps Script code and connected spreadsheet.
+2. Extract this ZIP. Keep APPS-SCRIPT-CODE.gs and index.html together.
+3. Open the existing Apps Script project connected to your current portal (the project may still be labelled ExamReady Connector).
+4. Open APPS-SCRIPT-CODE.gs from this folder, select all, and copy it.
+5. In Apps Script, open the existing Code.gs, select all, paste the copied code, and click Save (or press Ctrl+S / Cmd+S).
+6. In the function dropdown beside Run, choose setup, then click Run. Approve Google permissions if asked. Setup creates a StudyPlans sheet and adds the AI guidance column if it is not already present. Existing exam and account rows are preserved.
+7. Open Deploy > Manage deployments. Edit your existing web app deployment, choose New version, and click Deploy. Keep the current web app URL and its execution/access settings. Do not create a second unrelated deployment.
+8. Update the website too: for local use, open the new index.html in this extracted folder. If the portal is hosted online, replace its current index.html with this version and upload the complete assets folder beside it so the logo loads. The website update and Apps Script deployment are both required.
+9. Close old tabs, open the updated reminder.ai site, and log in again.
+10. To enable WhatsApp, follow `START-HERE-TWILIO-WHATSAPP.txt`; the website and Apps Script both need the updated version.
+
+TEST
+1. Log in as a student and open Study Plans in the side menu.
+2. Click + Add a plan. Enter a name such as “Learn Maths today.” Add one or more specific tasks, such as “Practise linear equations,” then click Save plan.
+3. Tick a task. It should stay checked after refreshing/reopening Study Plans and show a completion date and time.
+4. Untick it to mark it incomplete; the completion time should disappear. Add another task, then test deleting a task or whole plan if desired.
+5. Log in as a different student and confirm that the first student's plans are not visible.
+
+DETAILS
+- Each plan supports up to 30 tasks; plan titles up to 100 characters; task text up to 200 characters.
+- Completion times are recorded by the server and displayed in the student's browser-local time.
+- Students can add tasks later, remove individual tasks, or delete a plan. Deleting a plan also deletes its tasks.
+- Only authenticated student accounts can list or change their own plans. Teachers and administrators do not have access to student plan contents through this feature.
+- Study Plans themselves are manual and do not call Gemini. This package also includes optional Twilio WhatsApp delivery for opted-in exam reminders; see `START-HERE-TWILIO-WHATSAPP.txt` for setup. LMS syncing is not included.
+- The same package retains the previous teacher AI-guidance feature. The AI still does not read uploaded file contents in this update.
+- No live deployment or student data was changed or tested while preparing this ZIP. Use test accounts you control after deployment.
+
+BRANDING
+The page title and visible site name are reminder.ai. The logo crop used in the header is assets/reminder-ai-wordmark.jpg; the original uploaded image is preserved as assets/reminder-ai-logo-original.jpg. Keep the assets folder beside index.html when hosting. This updates the website’s displayed name and logo but does not set up DNS or transfer the domain to reminder.ai.

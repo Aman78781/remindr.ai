@@ -1,0 +1,8 @@
+REMEMBER LOGIN FIX
+
+1. Replace the Apps Script code with APPS-SCRIPT-CODE.gs and save.
+2. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+3. Close old website tabs and open the new index.html.
+4. Log in one final time. After that, reopening or refreshing the website remembers the account for up to seven days.
+
+Separate tabs still receive separate secure tokens, so a teacher tab and student tab do not interrupt each other. Logging out only ends the current tab's session.

@@ -1,0 +1,9 @@
+EXAMREADY STABILITY FIX
+
+1. Replace all Google Apps Script code with APPS-SCRIPT-CODE.gs and Save.
+2. Select setup and click Run. This adds an Operations sheet used to confirm completed requests.
+3. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+4. Close every older ExamReady browser tab.
+5. Open the new index.html from this folder.
+
+This version prevents old account requests from overwriting a new login. It also recovers successful signup, login, create, edit, and delete results when the Apps Script response incorrectly shows 404.

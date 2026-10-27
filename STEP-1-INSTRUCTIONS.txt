@@ -1,0 +1,9 @@
+STEP 1 — CLASS FILTERING
+
+1. Open APPS-SCRIPT-CODE.gs and copy all code.
+2. In Google Sheets: Extensions > Apps Script. Replace the old code and Save.
+3. Select setup and click Run. It adds a classGrade column to Students.
+4. Deploy > Manage deployments > pencil > New version > Deploy.
+5. Existing students: open Students and type their class in the new classGrade column.
+6. The student class must match the exam class. Capital letters and extra spaces do not matter.
+7. Open index.html and test with two different classes.

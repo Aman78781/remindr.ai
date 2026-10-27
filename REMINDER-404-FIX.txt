@@ -1,0 +1,9 @@
+REMINDER LOADING 404 FIX
+
+This is a website-side reliability fix. The page now retries temporary 404 responses four times and keeps the last successful dashboard data available for 30 minutes.
+
+1. Close all older website tabs.
+2. Open this folder's new index.html.
+3. Log in and open Reminders.
+
+No Apps Script replacement or deployment is required if the teacher reminder version was already deployed successfully. If every retry still fails, confirm that the current Apps Script Web App deployment is active and uses the same /exec URL.

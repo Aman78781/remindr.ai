@@ -1,0 +1,9 @@
+STEP 2 — EDIT AND DELETE EXAMS
+
+1. Replace Google Apps Script with APPS-SCRIPT-CODE.gs and Save.
+2. Select setup and click Run.
+3. Deploy > Manage deployments > pencil > New version > Deploy.
+4. Keep the same Web App URL.
+5. Open index.html and log in as teacher.
+6. Edit changes details. No new file keeps the old file; a new file replaces it.
+7. Delete removes the exam, Files rows, and Drive files.

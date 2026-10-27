@@ -1,0 +1,10 @@
+SECURE AUTHENTICATION SETUP
+
+1. Replace all Google Apps Script code with APPS-SCRIPT-CODE.gs and Save.
+2. Keep your GEMINI_API_KEY and GEMINI_MODEL Script Properties unchanged.
+3. Select setup and click Run. This creates the Sessions sheet. Session tokens are stored only as hashes.
+4. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+5. Close every older ExamReady browser tab and open this folder's new index.html.
+6. Everyone must log in again once after this upgrade. Old unsecured browser sessions are removed automatically.
+
+Secure sessions expire after 7 days. Logout revokes the current token. Exams, files, and Gemini requests are checked by Apps Script using the secure token instead of trusting an email sent by the browser.

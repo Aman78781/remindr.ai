@@ -1,0 +1,15 @@
+AUTOMATIC LOGIN FIX
+
+This website now keeps remembered login information separate for each website folder. Opening a newly downloaded version starts on the home page instead of opening an account remembered by an older folder.
+
+- Clicking Log in or Sign up cancels any automatic login that is still loading.
+- Clicking the login submit button with empty required fields cannot log in.
+- After you manually log in to this exact folder, refreshing or reopening this same folder can still remember that account for up to seven days.
+- Teacher and student tabs remain separate.
+
+INSTALLATION
+1. Close all older website tabs.
+2. Open this folder's new index.html.
+3. Log in to the account you want for this folder.
+
+No Apps Script replacement or deployment is needed.

@@ -1,0 +1,5 @@
+DELETE REFRESH FIX
+
+This version removes a deleted exam from the screen immediately after Google Sheets confirms deletion. You do not need to restart the website.
+
+The Google Apps Script code is unchanged, so you do not need to redeploy it if Step 3 is already working. Open the new index.html and test deleting an exam.

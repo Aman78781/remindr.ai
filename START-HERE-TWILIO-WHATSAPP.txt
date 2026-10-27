@@ -1,0 +1,34 @@
+REMINDER.AI — TWILIO WHATSAPP REMINDERS (SANDBOX DEMO)
+
+IMPORTANT
+- This version sends WhatsApp only to students who have opted in and whose selected reminder day is due. Existing students are opted out until they check the WhatsApp option in Settings and save. New student sign-up includes an optional opt-in checkbox.
+- Never send your Twilio Auth Token in chat, email, screenshots, or source code. Store it only in Apps Script Script Properties.
+- The default Twilio template is the standard two-variable appointment reminder template. Its variables include the subject, exam date, reminder stage, and exam time. For a branded custom template later, use an approved two-variable template such as: `reminder.ai: Your {{1}}. Please start reviewing your key topics now. Exam time: {{2}}.`
+- Each test recipient must join your Sandbox from their WhatsApp account. Only test with your own number until you have permission to message other students.
+
+A. UPDATE THE APP
+1. Back up the current Apps Script code and spreadsheet.
+2. Open the existing Apps Script project. Replace all of `Code.gs` with `APPS-SCRIPT-CODE.gs` from this ZIP and click Save.
+3. Run `setup` once. This adds the WhatsApp opt-in column while preserving existing rows.
+4. In Apps Script, open Project Settings (gear) > Script Properties > Add script property. Add these entries:
+   - `TWILIO_ACCOUNT_SID` = Account SID from Twilio Console
+   - `TWILIO_AUTH_TOKEN` = Auth Token from Twilio Console (keep private)
+   - `TWILIO_WHATSAPP_FROM` = `whatsapp:` followed by the Sandbox number (example format: `whatsapp:+14155238886`)
+   - `TWILIO_TEST_TO` = `whatsapp:` followed by your own joined WhatsApp number (example format: `whatsapp:+971501234567`)
+   - `TWILIO_CONTENT_SID` is optional. If omitted, the code uses Twilio's sample appointment-reminder template. If you set it, it must be a compatible two-variable template.
+   - `TWILIO_SANDBOX_FREEFORM` = `true` for the judge demo message, only while the recipient is inside the 24-hour window opened by sending `join`. Leave this unset/false outside that window.
+5. Click Save project settings. In the function selector, choose `testTwilioWhatsApp` and click Run. Approve the Google permission request. Check your WhatsApp and the Apps Script execution log.
+6. Deploy > Manage deployments > Edit > New version > Deploy. Keep your current web app URL/access settings. Update the hosted `index.html` and `assets` folder from this ZIP as well.
+7. Run `installDailyReminderTrigger` once. It installs the daily check for approximately 7 AM Asia/Dubai and tests due reminders immediately.
+
+B. ENABLE A STUDENT FOR THE TEST
+1. Make sure the student's saved WhatsApp number is the same number that joined the Twilio Sandbox.
+2. In the student account, open Settings, check the WhatsApp opt-in box, choose the reminder days, and click Save.
+3. Create an exam for the exact same class/grade. For a 3-day test, set the exam date three Dubai calendar days ahead and make sure the student has `3 days before` selected.
+4. To test immediately, run `generateExamReminders` from Apps Script. The matching reminder should be sent once; the Reminders sheet changes its status from `ready` to `sent`. In free-form demo mode, make sure the recipient has sent the Sandbox `join` message within the last 24 hours. The daily trigger will send future due reminders automatically while using a valid template/window.
+5. If the test fails, check the Apps Script execution log and Twilio Monitor > Messaging logs. Confirm the recipient joined the Sandbox and that the `From` value is the Sandbox WhatsApp number with the `whatsapp:` prefix.
+
+C. WHATSAPP RULES / LIVE USE
+- Twilio Sandbox is for testing, not a production school sender. A `join` opens a 24-hour free-form reply window; Sandbox membership itself expires after three days, so the recipient may need to join again for a later demo.
+- WhatsApp business-initiated reminders generally require a template outside the 24-hour customer-service window. For live use, configure a production WhatsApp sender and the proper approved template, obtain clear student/parent consent as appropriate for your school, and use only numbers that opted in.
+- Do not send messages to the whole class until your school has approved the use and each recipient has opted in.

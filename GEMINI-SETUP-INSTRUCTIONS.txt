@@ -1,0 +1,19 @@
+GEMINI CHATBOT SETUP
+
+PART 1 — GET THE KEY
+1. Open Google AI Studio in your browser and sign in.
+2. Create a Gemini API key. Never put the key in the website files and do not send it in chat.
+
+PART 2 — SAVE IT SAFELY
+3. Open your Google Sheet > Extensions > Apps Script.
+4. Replace all code with APPS-SCRIPT-CODE.gs and Save.
+5. Open Project Settings (gear icon).
+6. Under Script properties, add property GEMINI_API_KEY and paste the key as its value.
+7. Optional: add GEMINI_MODEL. If omitted, the code uses gemini-flash-latest.
+
+PART 3 — AUTHORIZE AND DEPLOY
+8. Select setup and click Run.
+9. Select testGeminiConnection and click Run. Approve permissions if Google asks. The result should say Gemini connected.
+10. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+11. Close older website tabs and open the new index.html.
+12. Log in, open AI Study, and ask a study question.

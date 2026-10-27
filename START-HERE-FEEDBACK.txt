@@ -1,0 +1,16 @@
+BETA FEEDBACK UPDATE
+
+1. Back up your current code/data and extract this ZIP.
+2. Replace Code.gs in ExamReady Connector with APPS-SCRIPT-CODE.gs. Save.
+3. Run setup. It creates the Feedback data tab without deleting existing data.
+4. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same /exec URL.
+5. Leave ADMIN_EMAIL, Gemini and Twilio properties unchanged.
+6. Close older tabs and open the new index.html. Log in.
+
+STUDENT/TEACHER: open Feedback, choose category, enter a title (3–80 characters) and description (10–1500), then Send feedback. A reference appears only when the server confirms saving it. Draft stays in the form on errors. The administrator receives your account name/email; do not include secrets or information about other students. Logout clears the draft.
+
+ADMIN: dashboard > Feedback inbox. Refresh data for new reports. Filter Open/Resolved/All. Mark resolved or Reopen. There is no automatic email/WhatsApp notification and no real-time polling. Reports are private to the administrator in the portal, but workbook collaborators with direct data access can also see them.
+
+SECURITY: logged-in active student/teacher required; identity is taken from validated session, not form fields. Public/student inbox access and status edits are denied. Request IDs plus server lock guard identical-request duplicates; five reports per account per ten minutes. User text is escaped for display and stored as literal data rather than spreadsheet formulas. No attachments collected.
+
+TEST: log in as a test student, send a report, then open administrator dashboard and Refresh data. Find it in Open, mark resolved, switch filter to Resolved, reopen it if needed. Test both themes on mobile. Existing beta authentication limits still apply and WhatsApp remains paused.

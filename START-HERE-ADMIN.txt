@@ -1,0 +1,30 @@
+ADMINISTRATOR DASHBOARD — BETA INSTALLATION
+
+BACK UP your current Apps Script code and data before installing.
+
+1. Replace Code.gs in the existing ExamReady Connector with all code from APPS-SCRIPT-CODE.gs and save.
+2. Run setup. It adds accountStatus and operation-owner columns without deleting data. Existing blank accountStatus means active. Existing approved teachers stay approved; blank teacher approval becomes pending.
+3. In Project Settings > Script properties add ADMIN_EMAIL. Set it to the email of YOUR already registered portal account. Verify this row belongs to you before granting access. Do not choose an unregistered email: signup emails are not verified by this beta. Leave all Gemini and Twilio properties unchanged.
+4. Deploy > Manage deployments > pencil > New version > Deploy. Keep the existing /exec URL.
+5. Extract this website into its own folder. Close old tabs and open its index.html.
+6. Log in using that existing account's email and password. You will see Administrator dashboard, not its former student/teacher dashboard. Old role sessions require a new login after promotion.
+
+IMPORTANT
+- Only one owner email is configured. Public signup accepts student/teacher only. The browser cannot grant administrator rights.
+- The owner cannot be disabled or rejected using this dashboard. To remove administrator rights, edit ADMIN_EMAIL privately in Apps Script and save; reconfigure/deploy as needed.
+- Disable revokes all target sessions and blocks login and every future authenticated request. Re-enable does not revive revoked tokens: the user must log in again. Data is preserved. Already downloaded files/information cannot be remotely erased and Drive link sharing is unchanged.
+- Totals count all registered students/teachers including disabled accounts. Upcoming means future exam date/time; pending means teacher approval is pending. Disabled total is also shown.
+- One combined request loads totals/accounts/upcoming exams. Search is local. Changes update from confirmed server responses, not speculative success. Refresh brings in new registrations; there is no live push or polling promise.
+- Locks and per-request recovery protect duplicate account changes. Login is limited to five failed attempts per email in ten minutes; this is a beta safeguard, not full abuse protection.
+- Your two Twilio helper functions are included but NEVER invoked automatically. WhatsApp delivery remains paused.
+- Student exams, teacher exam editing, files, Gemini, and immediate/daily reminders remain available in their usual roles.
+- This is a small beta, not a production security certification: inherited password hashing/session storage should be replaced with a managed authentication provider and stronger password storage before public deployment. Admin access does not give students/teachers access to owner account lists.
+
+TEST IN TWO SEPARATE TABS
+A. Log in as owner and verify the four totals.
+B. Register a pending teacher, Refresh data, approve them, then test their login.
+C. Keep a student tab logged in; disable it in admin. Its next authenticated action must fail. Disabled account login must fail.
+D. Enable it. Log in fresh and verify access returns.
+E. Test search, Refresh, and upcoming exams. Do not share your owner password.
+
+No credentials are embedded in these files. Private Script Property values stay in your existing project.

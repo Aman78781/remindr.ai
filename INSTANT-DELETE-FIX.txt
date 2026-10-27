@@ -1,0 +1,5 @@
+INSTANT DELETE FIX
+
+This version removes the exam from the screen before waiting for the Google Apps Script response. If the known 404 response happens after Google Sheets has deleted the row, the exam stays removed on screen.
+
+You do not need to replace or redeploy Apps Script. Open the new index.html.

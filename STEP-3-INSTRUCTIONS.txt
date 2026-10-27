@@ -1,0 +1,10 @@
+STEP 3 — TEACHER APPROVAL
+
+1. Replace the Google Apps Script code with APPS-SCRIPT-CODE.gs and Save.
+2. Select setup and click Run. This adds approvalStatus to Teachers.
+3. Existing teachers are automatically marked approved.
+4. Deploy > Manage deployments > pencil > New version > Deploy.
+5. A new teacher is saved as pending and cannot log in.
+6. To approve: open Teachers and change pending to approved in approvalStatus.
+7. To block: change it to rejected.
+8. Use only approved, pending, or rejected.

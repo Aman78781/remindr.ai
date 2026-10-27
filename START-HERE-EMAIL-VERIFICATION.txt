@@ -1,0 +1,26 @@
+EMAIL VERIFICATION FOR NEW SIGNUPS
+
+The six-digit code goes to the school email entered during signup. It is sent using Apps Script MailApp, under the Google account that owns/executes the Web App—not Twilio, WhatsApp or Gemini.
+
+INSTALL
+1. Back up your code/data and extract this ZIP.
+2. Replace Code.gs with APPS-SCRIPT-CODE.gs. Save.
+3. Run setup. It adds EmailVerifications, leaving existing accounts/data intact.
+4. Run authorizeEmailVerification once and approve email-sending permission. It checks quota and does not send a message.
+5. Deploy > Manage deployments > pencil > New version > Deploy. Keep existing /exec URL and Execute as Me setting.
+6. Keep ADMIN_EMAIL, Gemini and Twilio properties unchanged. EMAIL_VERIFICATION_SECRET is created automatically on first code request. Do not delete/modify it while codes are pending.
+7. Close old tabs and open new index.html.
+
+TEST
+Use your actual, unused school mailbox and unique school ID. Submit signup, check school inbox/spam, enter code. Students get their account only after correct verification. Verified teachers remain pending until admin approval.
+
+Codes expire after 10 minutes; five wrong attempts lock that challenge. Resend after 60 seconds; maximum three sends per challenge and five per email per hour. Resend replaces the previous code, does NOT reset failed attempts. If locked, wait for current expiry then start signup again.
+No account is written to Students/Teachers before verification. Pending drafts contain a password hash, not plaintext. Completed drafts clear password/code hashes. Pending challenge ID is saved only in the current tab's session storage; clicking Signup again continues it. Closing the entire tab can lose this draft pointer: wait until the code expires to start signup again. Changing email while a challenge is live does not cancel the earlier draft; the older code expires naturally.
+
+Existing accounts, including administrator accounts, remain accessible without retroactive verification. Do not delete accounts to test unless you intend to remove them.
+
+DELIVERY
+MailApp acceptance does not guarantee arrival. School filters may quarantine external messages. Check spam and ask the school mail administrator if blocked. Apps Script recipient quotas apply; no unlimited-email promise. The test setup has not been deployed or delivered to your real mailbox by this assistant. Use only addresses you control/consenting testers. Automatic WhatsApp stays paused.
+
+SECURITY LIMITS
+This adds mailbox ownership verification, not full production authentication. School email verification does not verify school ID or teacher identity; teacher approval is still necessary. Keep the private data workbook access limited. Inherited beta password/session limitations still apply. Pending drafts are retained in EmailVerifications until an owner removes expired rows; do not share the data workbook publicly.

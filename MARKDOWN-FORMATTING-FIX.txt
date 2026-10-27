@@ -1,0 +1,5 @@
+CHATBOT FORMATTING FIX
+
+Gemini answers now display bold text, italic text, headings, bullet lists, numbered lists, quotes, inline code, and code blocks. Formatting is escaped before rendering to protect the page from unsafe HTML.
+
+No Google Apps Script change or redeployment is needed. Open the new index.html. Existing API keys and Script Properties stay the same.

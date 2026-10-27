@@ -1,0 +1,16 @@
+IMMEDIATE DUE REMINDERS — INSTALL THIS UPDATE
+
+1. Copy all code from APPS-SCRIPT-CODE.gs into your existing Apps Script project and save.
+2. Run setup once.
+3. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same /exec URL.
+4. Open index.html from this folder. Existing data and Gemini properties stay unchanged.
+5. Keep your existing daily reminder trigger. If not installed, run installDailyReminderTrigger once.
+
+TEST
+Create or edit an exam for tomorrow, for a student's exact class. Select 1 day before and leave Pause unchecked. Save it. Refresh the student's dashboard and open Reminders. No manual generateExamReminders run is needed.
+
+Only a stage that is due today is prepared immediately. Future stages still wait for their scheduled day, using Dubai calendar dates. This update does not send WhatsApp messages.
+
+Repeated checks are protected against duplicate generation with a short server lock. An exam save checks only that exam, not all exams. If reminder preparation temporarily fails, the exam remains saved and the daily check can retry it.
+
+The website layout and login behavior are unchanged. Installation needs a backend deployment; changing only index.html is not enough.

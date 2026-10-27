@@ -1,0 +1,19 @@
+SPEED AND MULTI-TAB FIX
+
+1. Replace all Apps Script code with APPS-SCRIPT-CODE.gs and save.
+2. Run setup once.
+3. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+4. Close old website tabs and open the new index.html.
+
+What changed:
+- Teacher and student logins are separated by browser tab.
+- Logout is immediate and cannot later interrupt a new login.
+- Full setup work no longer runs on every request.
+- Requests no longer wait behind one global lock.
+- Session activity writes are reduced.
+- Student signup uses one request instead of two.
+- New and edited exams appear immediately after saving.
+- Gemini receives a smaller, faster context while keeping exam awareness.
+- Website wording now says data instead of the storage vendor name.
+
+Existing accounts, exams, files, approvals, sessions, and Gemini settings remain compatible.

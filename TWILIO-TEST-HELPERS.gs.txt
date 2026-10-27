@@ -1,0 +1,1 @@
+// Optional: these helpers are preserved in APPS-SCRIPT-CODE.gs. No automatic WhatsApp sending is enabled.

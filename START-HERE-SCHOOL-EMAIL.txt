@@ -1,0 +1,19 @@
+SCHOOL EMAIL SIGNUP RESTRICTION
+
+New student and teacher accounts must use exactly @tallah.habitatschool.org.
+Both browser and backend enforce it. Case-insensitive, surrounding spaces trimmed. Gmail, other domains, subdomains, malformed addresses and suffix tricks are rejected before creating an account.
+
+INSTALL
+1. Back up your code/data and extract this ZIP.
+2. Replace Code.gs with APPS-SCRIPT-CODE.gs; save.
+3. Deploy > Manage deployments > pencil > New version > Deploy. Same /exec URL.
+4. Close older website tabs, open this new index.html.
+No new properties or setup run is needed if the feedback version is already installed. Keep ADMIN_EMAIL and other Script Properties unchanged.
+
+Existing registered accounts (including administrator accounts with other email domains) can still log in; nothing is deleted or migrated. This is a new-signup restriction, not a retroactive login ban.
+
+TEST
+Try new signup with name@gmail.com: it should show the school-email warning and not submit/create data. Try a real unused name@tallah.habitatschool.org, plus a unique school ID: signup should work. Teachers still require approval.
+
+IMPORTANT
+The suffix check does not verify mailbox ownership: someone could type an address they do not own. Email-code/link verification or school SSO is a separate future upgrade. Continue using trusted beta testers and unique passwords. Other beta security limits are unchanged.

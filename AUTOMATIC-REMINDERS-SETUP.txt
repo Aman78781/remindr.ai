@@ -1,0 +1,16 @@
+AUTOMATIC REMINDERS SETUP
+
+1. Replace the Apps Script code with APPS-SCRIPT-CODE.gs and save.
+2. Select setup and click Run once. This creates the Reminders data tab and sets the Dubai timezone.
+3. Select installDailyReminderTrigger and click Run. Approve permission if requested.
+4. The function immediately checks existing exams, then runs automatically every day around 7 AM Dubai time.
+5. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+6. Close old website tabs and open the new index.html.
+
+TESTING
+- Create a student and an exam for exactly the same class.
+- For an immediate test, set the exam to 7, 3, or 1 calendar day away, or later today.
+- Run generateExamReminders manually once.
+- Refresh the student dashboard and open Reminders.
+
+The Reminders data tab stores rows with status ready. Duplicate protection prevents the same stage from being created twice. These ready rows will be used by the WhatsApp upgrade next.

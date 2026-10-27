@@ -1,0 +1,8 @@
+DELETE A STUDENT OR TEACHER:
+Open the matching Google Sheet tab, right-click the row number, and choose Delete row. Keep row 1.
+
+DELETE AN EXAM:
+Delete its row from Exams. Then delete matching rows from Files.
+
+DELETE AN UPLOADED FILE:
+Delete its row from Files AND delete the actual file from the ExamReady Uploads folder in Google Drive.

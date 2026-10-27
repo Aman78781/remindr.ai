@@ -1,0 +1,16 @@
+TEACHER REMINDER CONTROLS
+
+1. Replace the Apps Script code with APPS-SCRIPT-CODE.gs and save.
+2. Select setup and click Run once. New reminder-setting columns are added to Exams without deleting existing data.
+3. If the daily trigger was not already installed, select installDailyReminderTrigger and click Run.
+4. Deploy > Manage deployments > pencil > New version > Deploy. Keep the same Web App URL.
+5. Close old website tabs and open the new index.html.
+
+TEACHER WORKFLOW
+- Create or edit an exam.
+- Choose 7 days, 3 days, 1 day, and/or exam day.
+- Optionally add a teacher note or pause all reminders.
+- Open Reminders to see scheduled plans, matching students, ready rows, and sent rows.
+- Existing exams default to all four stages enabled.
+
+Students continue to see only their own class reminders. The automatic check runs around 7 AM Dubai time.
